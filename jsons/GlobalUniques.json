@@ -53,6 +53,8 @@
 		"[This Unit] gains the [Binded] status for [3] turn(s) <upon damaging a [Gordian Knot] unit>",
 		//Thanatos Theocracy
 		"[This Unit] gains the [Baned] status for [1] turn(s) <upon damaging a [Disturbing Presence] unit>",
+		"[This Unit] gains [5] XP <upon defeating a [Barbarian] unit> <for [Thanatos Theocracy] units> <for [Melee] units>",
+		"[This Unit] gains [2] XP <upon defeating a [Barbarian] unit> <for [Thanatos Theocracy] units> <for [Ranged] units>",
 		//Troglodyte
 		"[This Unit] takes [10] damage <upon damaging a [Retribution] unit> <for [Melee] units> <for [non-[Air]] units>", 
 		"[This Unit] takes [5] damage <upon damaging a [Retribution] unit> <for [Ranged] units> <for [non-[Air]] units>",

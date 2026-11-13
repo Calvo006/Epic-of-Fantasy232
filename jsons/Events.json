@@ -84,6 +84,99 @@
 		],
 	},
 	
+	//Thanatos Theocracy - first ritual (first city), free, one choice (see Nations.json)
+	{
+		"name": "Unholy Awakening",
+		"text": "Our first city is founded. The dead gods grant a first Unholy Ritual freely: choose one.",
+		"presentation": "Alert",	//None, Alert, Floating
+		"choices": [
+			{
+				"text": "Forbidden Knowledge (Free)",
+				"uniques": [
+						"Comment [+50% [Science] for 10 turns. Free (cost 0 [Soul]).]",
+						"Comment [+1 [Science] in all cities for every Forbidden Knowledge casted]",
+						
+						//backend
+						"[+25]% [Science] <for [10] turns> <hidden from users>",
+						"Instantly gain [1] [FKLimit] <hidden from users>",
+						"Instantly gain [1] [RitualAwakened] <hidden from users>",
+				]
+			},
+			{
+				"text": "Thanatos' Oath (Free)",
+				"uniques": [
+						"Comment [+25% Strength and +1 Movement for 10 turns. Free (cost 0 [Soul]).]",
+						"Comment [+3 turns of duration for every Thanatos' Oath casted]",
+						
+						//backend
+						"[+25]% Strength <for [10] turns> <when number of [TOLimit] is equal to [0]> <hidden from users>",
+						"[+25]% Strength <for [13] turns> <when number of [TOLimit] is equal to [1]> <hidden from users>",
+						"[+25]% Strength <for [16] turns> <when number of [TOLimit] is equal to [2]> <hidden from users>",
+						"[+25]% Strength <for [19] turns> <when number of [TOLimit] is equal to [3]> <hidden from users>",
+						"[+25]% Strength <for [22] turns> <when number of [TOLimit] is equal to [4]> <hidden from users>",
+						"[+25]% Strength <for [25] turns> <when number of [TOLimit] is equal to [5]> <hidden from users>",
+						"[+25]% Strength <for [28] turns> <when number of [TOLimit] is equal to [6]> <hidden from users>",
+						"[+25]% Strength <for [31] turns> <when number of [TOLimit] is equal to [7]> <hidden from users>",
+						"[+25]% Strength <for [34] turns> <when number of [TOLimit] is equal to [8]> <hidden from users>",
+						
+						"[+1] Movement <for [10] turns> <when number of [TOLimit] is equal to [0]> <hidden from users>",
+						"[+1] Movement <for [13] turns> <when number of [TOLimit] is equal to [1]> <hidden from users>",
+						"[+1] Movement <for [16] turns> <when number of [TOLimit] is equal to [2]> <hidden from users>",
+						"[+1] Movement <for [19] turns> <when number of [TOLimit] is equal to [3]> <hidden from users>",
+						"[+1] Movement <for [22] turns> <when number of [TOLimit] is equal to [4]> <hidden from users>",
+						"[+1] Movement <for [25] turns> <when number of [TOLimit] is equal to [5]> <hidden from users>",
+						"[+1] Movement <for [28] turns> <when number of [TOLimit] is equal to [6]> <hidden from users>",
+						"[+1] Movement <for [31] turns> <when number of [TOLimit] is equal to [7]> <hidden from users>",
+						"[+1] Movement <for [34] turns> <when number of [TOLimit] is equal to [8]> <hidden from users>",
+						
+						"Instantly gain [1] [TOLimit] <hidden from users>",
+						"Instantly gain [1] [RitualAwakened] <hidden from users>",
+				]
+			},
+			{
+				"text": "Enlightenment (Free)",
+				"uniques": [
+						"Comment [Empire enters golden age. Free (cost 0 [Soul]).]",
+						"Comment [+3 Golden Age points per city for every Enlightenment casted]",
+						"Comment [+25% Golden Age length for every Enlightenment casted]",
+						
+						//backend
+						"Empire enters golden age <hidden from users>",
+						
+						"Instantly gain [1] [ELimit] <hidden from users>",
+						"Instantly gain [1] [RitualAwakened] <hidden from users>",
+				]
+			},
+			{
+				"text": "Ascension Rite (Free)",
+				"uniques": [
+						"Comment [Gain a free Great Person. Free (cost 0 [Soul]).]",
+						"Comment [+10% Great Person generation in all cities for every Ascension Rite casted]",
+						
+						//backend
+						"Free Great Person <hidden from users>",
+						
+						"Instantly gain [1] [ARLimit] <hidden from users>",
+						"Instantly gain [1] [RitualAwakened] <hidden from users>",
+				]
+			},
+			{
+				"text": "Soul Harvest (Free: no Souls consumed)",
+				"uniques": [
+						"Comment [Gain [Faith] & [Gold] equal to 5(+Soul Harvest count x 5) times stockpiled [Soul]. Free: does not consume [Soul].]",
+						"Comment [+5 [Soul] multiplier for every Soul Harvest casted]",
+						
+						//backend
+						"Instantly gain [5] [Gold] <for every [Soul]> <for every [SHLimit]> <hidden from users>",
+						"Instantly gain [5] [Faith] <for every [Soul]> <for every [SHLimit]> <hidden from users>",
+						
+						"Instantly gain [1] [SHLimit] <hidden from users>",
+						"Instantly gain [1] [RitualAwakened] <hidden from users>",
+				]
+			},
+		],
+	},
+	
 	//Thanatos Theocracy
 	{
 		"name": "Unholy Ritual",
@@ -91,7 +184,7 @@
 		"presentation": "Alert",	//None, Alert, Floating
 		"choices": [
 			{
-				"text": "Forbidden Knowledge",
+				"text": "Forbidden Knowledge (Cost: 25 Souls)",
 				"uniques": [
 						"Only available <when above [24] [Soul]> <hidden from users>",
 						
@@ -102,11 +195,12 @@
 						"[+25]% [Science] <for [10] turns> <hidden from users>",
 						"Instantly gain [1] [FKLimit] <hidden from users>",
 						"Instantly gain [-25] [Soul] <hidden from users>",
+						"Triggers a [Unholy Ritual] event <hidden from users>",
 						
 				]
 			},
 			{
-				"text": "Thanatos' Oath",
+				"text": "Thanatos' Oath (Cost: 25 Souls)",
 				"uniques": [
 						"Only available <when above [24] [Soul]> <hidden from users>",
 						
@@ -136,11 +230,12 @@
 						
 						"Instantly gain [1] [TOLimit] <hidden from users>",
 						"Instantly gain [-25] [Soul] <hidden from users>",
+						"Triggers a [Unholy Ritual] event <hidden from users>",
 						
 				]
 			},
 			{
-				"text": "Enlightenment",
+				"text": "Enlightenment (Cost: 30 Souls)",
 				"uniques": [
 						"Only available <when above [29] [Soul]> <hidden from users>",
 						
@@ -153,11 +248,12 @@
 						
 						"Instantly gain [1] [ELimit] <hidden from users>",
 						"Instantly gain [-30] [Soul] <hidden from users>",
+						"Triggers a [Unholy Ritual] event <hidden from users>",
 						
 				]
 			},
 			{
-				"text": "Ascension Rite",
+				"text": "Ascension Rite (Cost: 45 Souls)",
 				"uniques": [						
 						"Only available <when above [44] [Soul]> <hidden from users>",
 						
@@ -169,12 +265,15 @@
 						
 						"Instantly gain [1] [ARLimit] <hidden from users>",
 						"Instantly gain [-45] [Soul] <hidden from users>",
+						"Triggers a [Unholy Ritual] event <hidden from users>",
 						
 				]
 			},
 			{
-				"text": "Soul Harvest",
+				"text": "Soul Harvest (Cost: all Souls)",
 				"uniques": [
+						"Only available <when above [0] [Soul]> <hidden from users>",
+						
 						"Comment [Gain [Faith] & [Gold] equal to 5(+Soul Harvest count x 5) times stockpiled [Soul]. Consumes all [Soul].]",
 						"Comment [+5 [Soul] multiplier for every Soul Harvest casted]",
 						
@@ -186,6 +285,12 @@
 						"Instantly gain [-1] [Soul] <for every [Soul]> <hidden from users>",
 					//	"Set [Soul] to [0] <hidden from users>", //Seems there is a bug when setting to 0
 						
+				]
+			},
+			{
+				"text": "Close the panel",
+				"uniques": [
+						"Comment [Stop casting rituals for now.]",
 				]
 			},
 		],

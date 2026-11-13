@@ -2945,7 +2945,7 @@
 		"name": "Thanatos Theocracy",
 		"leaderName": "Mordraugr",
 		"adjective": ["Thanatorian"],
-		"startBias": ["Tundra"],
+		"startBias": ["Plains"],
 	//	"preferredVictoryType": "domination",
 	//	"personality": "",
 		
@@ -2965,13 +2965,25 @@
 		"innerColor": [70, 150, 90],
 
 		"uniqueName": "Most Profane Throne",
-		"uniques": ["Comment [Cast an [Unholy Ritual] once every era, consuming [Soul] for powerful empire-wide effects (See Civilopedia for the list)]",
-					"Comment [Gain 1 [Soul] upon defeating a non-[Barbarian] unit]",
+		"uniques": ["Comment [Cast one free [Unholy Ritual] when you found your first city. After that, a ritual panel opens when you have researched half of the technologies of each era, where you can cast several rituals while you have enough [Soul] (See Civilopedia for the list)]",
+					"Comment [Gain 1 [Soul] upon defeating any enemy unit, including [Barbarian] units]",
+					"Comment [Units keep gaining XP from defeating [Barbarian] units beyond the usual limit (+5 XP for melee units, +2 XP for ranged units)]",
 					"Comment [Gain 5 [Soul] upon constructing [Faith] building (once per building name per city)]",
 					
 					//Backend
-					"Instantly gain [1] [Soul] <upon defeating a [non-[Barbarian]] unit> <hidden from users>",
-					"Triggers a [Unholy Ritual] event <upon entering a new era> <hidden from users>",
+					"Instantly gain [1] [Soul] <upon defeating a [All] unit> <hidden from users>",
+					//First ritual: free, one choice, when the first city is founded
+					"Triggers a [Unholy Awakening] event <upon founding a city> <when number of [RitualAwakened] is equal to [0]> <hidden from users>",
+					//Ritual panel when half (rounded up) of the techs of each era are researched. Era sizes: Ancient 12, Classical 9, Medieval 10, Renaissance 10, Industrial 10, Modern 9, Atomic 8, Information 11, Future 1
+					"Triggers a [Unholy Ritual] event <upon discovering [Ancient era] technology> <when number of [Researched [Ancient era] Technologies] is equal to [6]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Classical era] technology> <when number of [Researched [Classical era] Technologies] is equal to [5]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Medieval era] technology> <when number of [Researched [Medieval era] Technologies] is equal to [5]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Renaissance era] technology> <when number of [Researched [Renaissance era] Technologies] is equal to [5]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Industrial era] technology> <when number of [Researched [Industrial era] Technologies] is equal to [5]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Modern era] technology> <when number of [Researched [Modern era] Technologies] is equal to [5]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Atomic era] technology> <when number of [Researched [Atomic era] Technologies] is equal to [4]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Information era] technology> <when number of [Researched [Information era] Technologies] is equal to [6]> <hidden from users>",
+					"Triggers a [Unholy Ritual] event <upon discovering [Future era] technology> <when number of [Researched [Future era] Technologies] is equal to [1]> <hidden from users>",
 					
 					//Unholy Ritual
 					//Forbidden Knowledge
